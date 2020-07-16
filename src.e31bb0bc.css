@@ -1114,6 +1114,7 @@ img {
 @media screen and (min-width: 1200px) {
   .section--background {
     display: flex;
+    padding-top: 0;
   }
 }
 
@@ -1130,6 +1131,11 @@ img {
 @media screen and (min-width: 1200px) {
   .recording {
     width: 655px;
+    padding-right: 40px;
+    padding-top: 130px;
+    padding-bottom: 193px;
+    margin-right: 0;
+    padding-left: 55px;
   }
 }
 
@@ -1174,7 +1180,6 @@ img {
   background: transparent;
   border-color: transparent;
   border-bottom-color: rgba(157, 164, 189, 0.4);
-  padding-top: 8px;
   padding-bottom: 8px;
 }
 .recording-input:hover {
@@ -1265,13 +1270,34 @@ img {
 }
 @media (min-width: 1200px) {
   .contacts {
-    width: 625px;
+    padding-top: 130px;
+    padding-bottom: 130px;
+    padding-left: 100px;
+    background-image: url(/desktop.17ad7221.png);
+  }
+}
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .contacts {
+    background-image: url(/desktop@2x.2fe2b077.png);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .desktop-container {
+    width: 525px;
+    padding: 0;
+    margin: 0;
   }
 }
 
 @media (min-width: 768px) {
   .contacts-flex {
     display: flex;
+  }
+}
+@media (min-width: 1200px) {
+  .contacts-flex {
+    display: block;
   }
 }
 
@@ -1282,12 +1308,17 @@ img {
   }
 }
 
-.contacts-list {
+.contacts-address {
   margin-bottom: 44px;
 }
 @media screen and (min-width: 768px) {
-  .contacts-list {
+  .contacts-address {
     margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contacts-address {
+    margin-bottom: 70px;
   }
 }
 
@@ -1316,6 +1347,7 @@ img {
 @media screen and (min-width: 768px) {
   .contacts-span {
     padding-left: 45px;
+    display: inline-block;
   }
 }
 
