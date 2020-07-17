@@ -201,24 +201,107 @@ var _siema = _interopRequireDefault(require("siema"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var mySiema = new _siema.default({});
 document.querySelector('.prev').addEventListener('click', function () {
   return mySiema.prev();
 });
 document.querySelector('.next').addEventListener('click', function () {
   return mySiema.next();
-}); // JS для бургера
-// (() => {
-//   const menuBtnRef = document.querySelector("[data-menu-button]");
-//   const mobileMenuRef = document.querySelector("[data-menu]");
-//   menuBtnRef.addEventListener("click", () => {
-//     const expanded =
-//       menuBtnRef.getAttribute("aria-expanded") === "true" || false;
-//     menuBtnRef.classList.toggle("is-open");
-//     menuBtnRef.setAttribute("aria-expanded", !expanded);
-//     mobileMenuRef.classList.toggle("is-open");
-//   });
-// })();
+});
+
+(function () {
+  var refs = {
+    menuBtn: document.querySelector('[data-menu-button]'),
+    closeBtn1: document.querySelector('[data-menu-close-1]'),
+    closeBtn2: document.querySelector('[data-menu-close-2]'),
+    closeBtn3: document.querySelector('[data-menu-close-3]'),
+    closeBtn4: document.querySelector('[data-menu-close-4]'),
+    closeBtn5: document.querySelector('[data-menu-close-5]'),
+    mobileMenu: document.querySelector('[data-menu]'),
+    sideBar: document.querySelector('[data-sideBar]')
+  };
+  refs.menuBtn.addEventListener('click', function () {
+    var expanded = refs.menuBtn.getAttribute('aria-expanded') === 'true' || false;
+    refs.menuBtn.classList.toggle('is-open');
+    refs.menuBtn.setAttribute('aria-expanded', !expanded);
+    refs.mobileMenu.classList.toggle('is-visible');
+    refs.sideBar.classList.toggle('is-open');
+    document.body.classList.toggle('modal-open');
+  });
+  refs.closeBtn1.addEventListener('click', function () {
+    var expanded = refs.menuBtn.getAttribute('aria-expanded') === 'true' || false;
+    refs.menuBtn.classList.toggle('is-open');
+    refs.menuBtn.setAttribute('aria-expanded', !expanded);
+    refs.mobileMenu.classList.toggle('is-visible');
+    refs.sideBar.classList.toggle('is-open');
+    document.body.classList.toggle('modal-open');
+  });
+  refs.closeBtn2.addEventListener('click', function () {
+    var expanded = refs.menuBtn.getAttribute('aria-expanded') === 'true' || false;
+    refs.menuBtn.classList.toggle('is-open');
+    refs.menuBtn.setAttribute('aria-expanded', !expanded);
+    refs.mobileMenu.classList.toggle('is-visible');
+    refs.sideBar.classList.toggle('is-open');
+    document.body.classList.toggle('modal-open');
+  });
+  refs.closeBtn3.addEventListener('click', function () {
+    var expanded = refs.menuBtn.getAttribute('aria-expanded') === 'true' || false;
+    refs.menuBtn.classList.toggle('is-open');
+    refs.menuBtn.setAttribute('aria-expanded', !expanded);
+    refs.mobileMenu.classList.toggle('is-visible');
+    refs.sideBar.classList.toggle('is-open');
+    document.body.classList.toggle('modal-open');
+  });
+  refs.closeBtn4.addEventListener('click', function () {
+    var expanded = refs.menuBtn.getAttribute('aria-expanded') === 'true' || false;
+    refs.menuBtn.classList.toggle('is-open');
+    refs.menuBtn.setAttribute('aria-expanded', !expanded);
+    refs.mobileMenu.classList.toggle('is-visible');
+    refs.sideBar.classList.toggle('is-open');
+    document.body.classList.toggle('modal-open');
+  });
+  refs.closeBtn5.addEventListener('click', function () {
+    var expanded = refs.menuBtn.getAttribute('aria-expanded') === 'true' || false;
+    refs.menuBtn.classList.toggle('is-open');
+    refs.menuBtn.setAttribute('aria-expanded', !expanded);
+    refs.mobileMenu.classList.toggle('is-visible');
+    refs.sideBar.classList.toggle('is-open');
+    document.body.classList.toggle('modal-open');
+  });
+})();
+
+var anchors = document.querySelectorAll('a[href*="#"]');
+
+var _iterator = _createForOfIteratorHelper(anchors),
+    _step;
+
+try {
+  var _loop = function _loop() {
+    var anchor = _step.value;
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      var blockID = anchor.getAttribute('href').substr(1);
+      document.getElementById(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
+
+  for (_iterator.s(); !(_step = _iterator.n()).done;) {
+    _loop();
+  }
+} catch (err) {
+  _iterator.e(err);
+} finally {
+  _iterator.f();
+}
 },{"./sass/main.scss":"sass/main.scss","siema":"../node_modules/siema/dist/siema.min.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -247,7 +330,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49655" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53672" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
