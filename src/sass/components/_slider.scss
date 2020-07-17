@@ -1,5 +1,6 @@
 .slider {
   position: relative;
+
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
@@ -15,18 +16,20 @@
 
 .slider-description {
   position: absolute;
-  top: 35%;
+  top: 36%;
   left: 6%;
   z-index: 1;
+
   max-width: 306px;
 
   @media screen and (min-width: $tablet) {
-    top: 43%;
-    left: 35%;
+    top: 38%;
+    left: 36%;
     max-width: 352px;
   }
 
   @media screen and (min-width: $desktop) {
+    top: 40%;
     left: 20%;
     max-width: 486px;
   }
@@ -88,9 +91,11 @@
 
 .slider-button {
   display: inline-block;
+
   min-width: 60px;
   padding: 8px 0;
   margin: 0;
+
   border: transparent;
   border-bottom: 1px solid $secondaryAccentTextColor;
   background-color: transparent;
@@ -101,6 +106,7 @@
   letter-spacing: 0.1em;
   color: $secondaryAccentTextColor;
   cursor: pointer;
+
   transition: color 250ms $cubic, border-color 250ms $cubic;
 
   &:hover,
@@ -114,6 +120,7 @@
 
 .prev {
   margin-right: 26px;
+
   text-align: left;
 }
 
@@ -139,6 +146,7 @@
   }
 
   @media screen and (min-width: $desktop) {
-    left: -35px;
+    left: -33px;
+    bottom: 100px;
   }
 }
