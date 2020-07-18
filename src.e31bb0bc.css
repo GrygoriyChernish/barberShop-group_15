@@ -274,15 +274,15 @@ img {
   .smallSocial.smallSocial--rotate {
     display: flex;
     position: absolute;
-    left: -53px;
-    bottom: 110px;
+    left: -7%;
+    bottom: 15%;
     transform: rotate(-90deg);
   }
 }
 @media screen and (min-width: 1280px) {
   .smallSocial.smallSocial--rotate {
-    left: -33px;
-    bottom: 100px;
+    left: -2.6%;
+    bottom: 15%;
   }
 }
 
@@ -319,6 +319,11 @@ img {
 @media screen and (min-width: 1280px) {
   .headerWrap {
     width: 94%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .headerWrap {
+    width: 1474px;
   }
 }
 
