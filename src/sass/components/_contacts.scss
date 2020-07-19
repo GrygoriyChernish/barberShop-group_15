@@ -272,7 +272,7 @@
   color: $primeryAccentTextColor;
 }
 
-.submit {
+button[type='submit'] {
   @media screen and (max-width: $preTablet) {
     margin-left: auto;
     margin-right: auto;
