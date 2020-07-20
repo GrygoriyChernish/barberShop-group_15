@@ -4,16 +4,17 @@
   display: inline-block;
   border: 1px solid $accentLinkColor;
   border-radius: 25px;
-  min-width: 160px;
+  width: 160px;
   height: 40px;
   padding: 0px;
+  @include centeredFlex();
 
-  font-family: $primeryFont;
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.09em;
   text-transform: uppercase;
+  text-decoration: none;
 
   color: $primeryTextColor;
 
